@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HK Team Warhammer Portal</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .bg-pattern {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(139, 0, 0, 0.08) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(200, 160, 40, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 80%, rgba(139, 0, 0, 0.06) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      width: 100%;
+      padding: 40px 24px 60px;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 56px;
+      padding-top: 32px;
+    }
+
+    .aquila {
+      font-size: 48px;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 0 12px rgba(200, 160, 40, 0.4));
+      letter-spacing: 8px;
+    }
+
+    .header h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      background: linear-gradient(180deg, #f0d060 0%, #b8960c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .header .subtitle {
+      font-size: 0.95rem;
+      color: #777;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .divider {
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #8b0000, transparent);
+      margin: 20px auto;
+    }
+
+    /* Card Grid */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: linear-gradient(135deg, #141414 0%, #1a1a1a 100%);
+      border: 1px solid #2a2a2a;
+      border-radius: 12px;
+      padding: 32px 28px;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #8b0000, #c8a028, #8b0000);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .card:hover {
+      border-color: #444;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(139, 0, 0, 0.15);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-icon {
+      font-size: 36px;
+      line-height: 1;
+    }
+
+    .card h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #f0d060;
+      letter-spacing: 1px;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: #888;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .card .arrow {
+      font-size: 0.85rem;
+      color: #555;
+      transition: color 0.25s ease;
+      align-self: flex-end;
+    }
+
+    .card:hover .arrow {
+      color: #c8a028;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .footer p {
+      font-size: 0.8rem;
+      color: #444;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .header h1 { font-size: 1.6rem; }
+      .card { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-pattern"></div>
+
+  <div class="container">
+    <header class="header">
+      <div class="aquila">🦅</div>
+      <h1>HK Team Portal</h1>
+      <p class="subtitle">Warhammer 40K · 11th Edition</p>
+      <div class="divider"></div>
+    </header>
+
+    <div class="card-grid">
+      <a href="https://integy.github.io/warhammer-pairing-tool/" class="card">
+        <div class="card-icon">⚔️</div>
+        <h2>Team Pairing</h2>
+        <p>WTC team pairing tool — manage rounds, score matrices, and defender assignments for HK, France &amp; Japan teams.</p>
+        <span class="arrow">→ Enter</span>
+      </a>
+
+      <a href="https://integy.github.io/warhammer-pairing-tool/11th-missions.html" class="card">
+        <div class="card-icon">📋</div>
+        <h2>11th Missions</h2>
+        <p>Mission selection for 11th Edition — browse and select missions with deployment maps and rules.</p>
+        <span class="arrow">→ Enter</span>
+      </a>
+
+      <a href="https://integy.github.io/warhammer-battle-system/" class="card">
+        <div class="card-icon">🎲</div>
+        <h2>Battle System</h2>
+        <p>Live battle tracking system — real-time scorekeeping, Firebase sync, multi-player support.</p>
+        <span class="arrow">→ Enter</span>
+      </a>
+    </div>
+
+    <footer class="footer">
+      <p>For the Emperor</p>
+    </footer>
+  </div>
+</body>
+</html>
